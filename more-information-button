@@ -1,0 +1,15 @@
+// shows details when clicked
+function showDetails() {
+  $('.moreIndicator').click(function() {
+    if($('.moreIndicator').hasClass('rot90')) {
+      $('.details').slideDown();
+      $('.moreIndicator').removeClass('rot90');
+      $('.moreIndicator').addClass('rot270');
+    }
+    else {
+      $('.details').slideUp();
+      $('.moreIndicator').removeClass('rot270');
+      $('.moreIndicator').addClass('rot90');
+    }
+  });
+};
