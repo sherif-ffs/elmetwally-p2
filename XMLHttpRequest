@@ -1,0 +1,25 @@
+// XMLHttpRequest variable
+var mRequest = new XMLHttpRequest();
+
+mRequest.onreadystatechange = function() {
+    // Do something if file is opened
+    if (mRequest.readyState == 4 && mRequest.status == 200) {
+      try {
+        mJson = JSON.parse(mRequest.responseText);
+        for (let i = 0; i < mJson.images.length; i++) {
+          let imgSrc = mJson.images[i].imgPath;
+          let locat = mJson.images[i].imgLocation;
+          let dat = mJson.images[i].date;
+          let descrip = mJson.images[i].description;
+          mImages.push(new GalleryImage(imgSrc, locat, dat, descrip));
+
+        }
+        console.log(mJson);
+      } catch(err) {
+
+        console.log(err.message);
+      }
+    }
+  };
+mRequest.open('GET', mUrl, true);
+mRequest.send();
