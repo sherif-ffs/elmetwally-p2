@@ -1,0 +1,14 @@
+function goForward() {
+  $('#nextPhoto').click(function() {
+    backClicked = false;
+    if (mCurrentIndex === mImages.length - 1) {
+      mCurrentIndex = 0;
+      addPhoto();
+      mLastFrameTime = 0;
+    } else {
+      mCurrentIndex++;
+      mLastFrameTime = 0;
+      addPhoto();
+    }
+  });
+};
