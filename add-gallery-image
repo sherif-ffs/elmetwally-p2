@@ -1,0 +1,7 @@
+//Push gallery image object into an array
+function makeGalleryImageOnloadCallback(galleryImage) {
+	return function(e) {
+		galleryImage.img = e.target;
+		mImages.push(galleryImage);
+	}
+}
