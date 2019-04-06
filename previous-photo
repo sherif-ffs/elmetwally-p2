@@ -1,0 +1,15 @@
+// move to previous photo
+function goBackward() {
+  $('#prevPhoto').click(function() {
+    backClicked = true;
+    if (mCurrentIndex === 0) {
+      mCurrentIndex = mImages.length -1;
+      addPhoto();
+      mLastFrameTime = 0;
+    } else {
+      mCurrentIndex--;
+      addPhoto();
+      mLastFrameTime = 0;
+    }
+  })
+};
