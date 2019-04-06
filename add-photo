@@ -1,0 +1,8 @@
+// add info from json file to DOM
+function addPhoto() {
+  document.getElementById("photo").src = mImages[mCurrentIndex].image;
+  $('.location').text('Location: ' + mImages[mCurrentIndex].description);
+  $('.date').text('Date: ' + mImages[mCurrentIndex].date);
+  $('.description').text('Description: ' + mImages[mCurrentIndex].location);
+  console.log(mImages[mCurrentIndex].image);
+}
